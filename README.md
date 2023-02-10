@@ -1,0 +1,1 @@
+Repositório destinado as atividades feita no Laboratório de Linguagem da programação 1.
