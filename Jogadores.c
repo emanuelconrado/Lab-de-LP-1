@@ -26,6 +26,8 @@ int main(){
     scanf("%d", &j2.chutes);
     scanf("%d", &j2.gols);
 
+    
+
     if(j1.chutes/j1.gols < j2.chutes/j2.gols){
         printf("%s (%d)", j1.nome, j1.idade);
     }else{
