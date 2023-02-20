@@ -14,8 +14,8 @@ int main(){
     int i;
 
     for(i = 0; i < 2; i++){
-        scanf("%s", &v[i].modelo);
-        scanf("%s", &v[i].marca);
+        scanf("%s", v[i].modelo);
+        scanf("%s", v[i].marca);
         scanf("%d", &v[i].ano);
         scanf("%d", &v[i].preco);
     }
