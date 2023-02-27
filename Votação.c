@@ -16,18 +16,23 @@ int main(){
     int nulos;
     int total = 0;
     int validos = 0;
-    double porcentagem;
+    float porcentagem;
+    int IMaior = 0;
 
     scanf("%d", &n);
 
     for(i = 0; i < n; i++){
         scanf("%d", &vetor[i].numero);
         gets(lixo);
-        gets(vetor[i].nome);  
+        gets(vetor[i].nome);
+        vetor[i].votos = 0;
     }
 
-    while(j > 0){
+    while(1){
         scanf("%d", &j);
+        if(j <= 0){
+            break;
+        }
 
         for(i = 0; i < n; i++){
             if(j == vetor[i].numero){
@@ -35,17 +40,30 @@ int main(){
                 validos++;
         }
 
-        total++;
     }
+    total++;
     }
     nulos = total - validos;
-    total = total - 1;
+    
+    for(i = 0; i < n; i++){
+        if(vetor[i].votos > vetor[IMaior].votos){
+            IMaior = i;
+        }
+    }
 
     /*Printar os votos, o numero, o nome e votos nulos*/
 
-    porcentagem = 3.14;
-
-    printf("%lf", 3.14);
+    for(i = 0; i < n; i++){
+        porcentagem = ((vetor[i].votos*1.0)/total)*100;
+        printf("%.2f - %d - %s", porcentagem, vetor[i].numero, vetor[i].nome);
+        if(i == IMaior){
+            printf(" VENCEDOR");
+        }
+        printf("\n");
+        
+    }
+    
+    printf("%.2f - Nulos", ((nulos*1.0/total)*100));
 
  
     return 0;
